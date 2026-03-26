@@ -713,12 +713,13 @@ body {
     padding: 20px 24px;
     margin: 20px 0;
     overflow-x: auto;
-    direction: ltr;
-    text-align: left;
+    direction: rtl;
+    text-align: right;
     line-height: 1.65;
     font-size: 13.5px;
     position: relative;
     border: 1px solid rgba(255,255,255,0.06);
+    font-family: 'Rubik', sans-serif;
 }
 
 .lesson-content pre code {
@@ -735,6 +736,7 @@ body {
     top: 10px;
     left: 10px;
     right: auto;
+    direction: ltr;
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.1);
     color: rgba(255,255,255,0.6);
