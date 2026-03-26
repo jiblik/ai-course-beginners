@@ -60,13 +60,12 @@ html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--bg);
+    background-color: var(--bg);
     color: var(--text);
     line-height: 1.7;
     font-size: 16px;
     direction: rtl;
     overflow-x: hidden;
-    transition: background var(--transition-slow), color var(--transition-slow);
 }
 
 /* ============================================
@@ -120,13 +119,12 @@ body {
     right: 0;
     width: var(--sidebar-width);
     height: 100vh;
-    background: var(--bg);
+    background-color: var(--bg);
     border-left: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     z-index: 100;
     overflow-y: auto;
-    transition: background var(--transition-slow), border-color var(--transition-slow);
 }
 
 .sidebar-header {
@@ -239,7 +237,6 @@ body {
     align-items: center;
     padding: 0 16px;
     gap: 12px;
-    transition: background var(--transition-slow);
 }
 [data-theme="dark"] .mobile-header { background: rgba(10,10,15,0.85); }
 
@@ -421,7 +418,6 @@ body {
     gap: 10px;
     box-shadow: var(--shadow);
     animation: float 6s ease-in-out infinite;
-    transition: background var(--transition-slow), border-color var(--transition-slow);
 }
 .hc-icon { font-size: 22px; }
 .hc-text { font-size: 13px; font-weight: 600; white-space: nowrap; }
@@ -447,8 +443,7 @@ body {
     padding: 40px 20px;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    background: var(--bg-alt);
-    transition: background var(--transition-slow);
+    background-color: var(--bg-alt);
 }
 .stat { text-align: center; }
 .stat-num {
@@ -693,7 +688,6 @@ body {
     padding: 24px 28px;
     margin: 32px 0;
     box-shadow: var(--shadow-xs);
-    transition: background var(--transition-slow), border-color var(--transition-slow);
 }
 .section-card.target  { border-right: 4px solid var(--blue);   border-left: none; }
 .section-card.content { border-right: 4px solid var(--green);  border-left: none; }

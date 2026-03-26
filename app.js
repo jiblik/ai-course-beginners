@@ -35,13 +35,23 @@ function initTheme() {
     const saved = localStorage.getItem('ai-course-theme');
     if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
     }
 }
 
 function toggleTheme() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('ai-course-theme', isDark ? 'light' : 'dark');
+    const newTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('ai-course-theme', newTheme);
+}
+
+function initThemeAttribute() {
+    // Ensure data-theme is always set explicitly
+    if (!document.documentElement.getAttribute('data-theme')) {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
 }
 
 // ============================================
