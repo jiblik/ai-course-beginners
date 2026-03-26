@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI למתחילים | הקורס המלא</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menuToggle" aria-label="תפריט">
+            <span></span><span></span><span></span>
+        </button>
+        <span class="mobile-title">AI למתחילים</span>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">AI</div>
+            <h1>AI למתחילים</h1>
+            <p class="subtitle">המדריך המלא לעולם הבינה המלאכותית</p>
+        </div>
+        <ul class="nav-list" id="navList">
+            <li><a href="#" data-page="home" class="nav-link active">
+                <span class="nav-icon">🏠</span>דף הבית
+            </a></li>
+            <li class="nav-divider">שיעורים</li>
+            <li><a href="#" data-page="lesson-01" class="nav-link">
+                <span class="nav-num">01</span>מה זה AI?
+            </a></li>
+            <li><a href="#" data-page="lesson-02" class="nav-link">
+                <span class="nav-num">02</span>השחקנים הגדולים
+            </a></li>
+            <li><a href="#" data-page="lesson-03" class="nav-link">
+                <span class="nav-num">03</span>Prompting - יסודות
+            </a></li>
+            <li><a href="#" data-page="lesson-04" class="nav-link">
+                <span class="nav-num">04</span>Prompting - מתקדם
+            </a></li>
+            <li><a href="#" data-page="lesson-05" class="nav-link">
+                <span class="nav-num">05</span>AI בעבודה
+            </a></li>
+            <li><a href="#" data-page="lesson-06" class="nav-link">
+                <span class="nav-num">06</span>AI ויצירתיות
+            </a></li>
+            <li><a href="#" data-page="lesson-07" class="nav-link">
+                <span class="nav-num">07</span>AI ובטיחות
+            </a></li>
+            <li><a href="#" data-page="lesson-08" class="nav-link">
+                <span class="nav-num">08</span>AI ועתיד העבודה
+            </a></li>
+            <li><a href="#" data-page="lesson-09" class="nav-link">
+                <span class="nav-num">09</span>ערכת הישרדות
+            </a></li>
+            <li class="nav-divider">נספחים</li>
+            <li><a href="#" data-page="resources" class="nav-link">
+                <span class="nav-icon">📋</span>כלים ומשאבים
+            </a></li>
+            <li><a href="#" data-page="quick-reference" class="nav-link">
+                <span class="nav-icon">⚡</span>גיליון עזר
+            </a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="progress-container">
+                <div class="progress-text">התקדמות: <span id="progressText">0/9</span></div>
+                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="content" id="content">
+        <!-- Home page (default) -->
+        <div id="homePage" class="page-content">
+            <div class="hero">
+                <div class="hero-badge">קורס מקיף</div>
+                <h1 class="hero-title">AI<br><span>למתחילים</span></h1>
+                <p class="hero-subtitle">מ"מה זה ChatGPT?" ל"תן לי שנייה, אני שואל את ה-AI שלי"</p>
+                <button class="cta-button" onclick="navigateTo('lesson-01')">
+                    להתחיל ללמוד
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </button>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-num">9</div>
+                    <div class="feature-label">שיעורים</div>
+                    <div class="feature-desc">מהבסיס ועד שימוש מתקדם</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-num">30+</div>
+                    <div class="feature-label">Prompts מוכנים</div>
+                    <div class="feature-desc">להעתקה ושימוש מיידי</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-num">5+</div>
+                    <div class="feature-label">שעות תוכן</div>
+                    <div class="feature-desc">בקצב שלכם</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-num">0₪</div>
+                    <div class="feature-label">כלים חינמיים</div>
+                    <div class="feature-desc">שמוזכרים בקורס</div>
+                </div>
+            </div>
+
+            <div class="lessons-grid">
+                <h2>תוכן הקורס</h2>
+                <div class="grid">
+                    <a href="#" data-page="lesson-01" class="lesson-card" onclick="navigateTo('lesson-01'); return false;">
+                        <span class="lesson-number">01</span>
+                        <h3>מה זה AI?</h3>
+                        <p>הבנה בסיסית, היסטוריה קצרה, ולמה דווקא עכשיו</p>
+                        <span class="lesson-time">~10 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-02" class="lesson-card" onclick="navigateTo('lesson-02'); return false;">
+                        <span class="lesson-number">02</span>
+                        <h3>השחקנים הגדולים</h3>
+                        <p>ChatGPT, Claude, Gemini, Grok, Copilot</p>
+                        <span class="lesson-time">~12 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-03" class="lesson-card" onclick="navigateTo('lesson-03'); return false;">
+                        <span class="lesson-number">03</span>
+                        <h3>Prompting - יסודות</h3>
+                        <p>מה זה Prompt, 5 עקרונות הזהב, וטכניקות בסיסיות</p>
+                        <span class="lesson-time">~10 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-04" class="lesson-card" onclick="navigateTo('lesson-04'); return false;">
+                        <span class="lesson-number">04</span>
+                        <h3>Prompting - מתקדם</h3>
+                        <p>שרשראות, ביקורת עצמית, ומאגר Prompts</p>
+                        <span class="lesson-time">~12 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-05" class="lesson-card" onclick="navigateTo('lesson-05'); return false;">
+                        <span class="lesson-number">05</span>
+                        <h3>AI בעבודה</h3>
+                        <p>מיילים, מצגות, סיכומים, ניתוח נתונים</p>
+                        <span class="lesson-time">~12 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-06" class="lesson-card" onclick="navigateTo('lesson-06'); return false;">
+                        <span class="lesson-number">06</span>
+                        <h3>AI ויצירתיות</h3>
+                        <p>תמונות, כתיבה יצירתית, וידאו, מולטימדיה</p>
+                        <span class="lesson-time">~12 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-07" class="lesson-card" onclick="navigateTo('lesson-07'); return false;">
+                        <span class="lesson-number">07</span>
+                        <h3>AI ובטיחות</h3>
+                        <p>פרטיות, הזיות, Deepfakes, כללי זהב</p>
+                        <span class="lesson-time">~10 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-08" class="lesson-card" onclick="navigateTo('lesson-08'); return false;">
+                        <span class="lesson-number">08</span>
+                        <h3>AI ועתיד העבודה</h3>
+                        <p>מקצועות בסיכון, הזדמנויות חדשות</p>
+                        <span class="lesson-time">~10 דק'</span>
+                    </a>
+                    <a href="#" data-page="lesson-09" class="lesson-card" onclick="navigateTo('lesson-09'); return false;">
+                        <span class="lesson-number">09</span>
+                        <h3>ערכת הישרדות</h3>
+                        <p>10 כלים חינמיים, קהילות, משאבים</p>
+                        <span class="lesson-time">~8 דק'</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic lesson content -->
+        <div id="lessonPage" class="page-content" style="display:none;">
+            <article class="lesson-content" id="lessonContent"></article>
+            <div class="lesson-nav" id="lessonNav"></div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
