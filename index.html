@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI למתחילים | הקורס המלא</title>
+    <meta name="description" content="קורס מקיף ומעשי בבינה מלאכותית למתחילים - 9 שיעורים, 30+ פרומפטים מוכנים, וכלים חינמיים">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
 
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Dark Mode Toggle (floating) -->
+    <button class="theme-toggle" id="themeToggle" aria-label="מצב כהה/בהיר">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+
     <!-- Mobile Header -->
-    <header class="mobile-header">
+    <header class="mobile-header" id="mobileHeader">
         <button class="menu-toggle" id="menuToggle" aria-label="תפריט">
             <span></span><span></span><span></span>
         </button>
@@ -23,7 +33,9 @@
     <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <div class="logo">AI</div>
+            <div class="logo">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 014 4v1a1 1 0 001 1h1a4 4 0 010 8h-1a1 1 0 00-1 1v1a4 4 0 01-8 0v-1a1 1 0 00-1-1H6a4 4 0 010-8h1a1 1 0 001-1V6a4 4 0 014-4z"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
             <h1>AI למתחילים</h1>
             <p class="subtitle">המדריך המלא לעולם הבינה המלאכותית</p>
         </div>
@@ -32,46 +44,22 @@
                 <span class="nav-icon">🏠</span>דף הבית
             </a></li>
             <li class="nav-divider">שיעורים</li>
-            <li><a href="#" data-page="lesson-01" class="nav-link">
-                <span class="nav-num">01</span>מה זה AI?
-            </a></li>
-            <li><a href="#" data-page="lesson-02" class="nav-link">
-                <span class="nav-num">02</span>השחקנים הגדולים
-            </a></li>
-            <li><a href="#" data-page="lesson-03" class="nav-link">
-                <span class="nav-num">03</span>Prompting - יסודות
-            </a></li>
-            <li><a href="#" data-page="lesson-04" class="nav-link">
-                <span class="nav-num">04</span>Prompting - מתקדם
-            </a></li>
-            <li><a href="#" data-page="lesson-05" class="nav-link">
-                <span class="nav-num">05</span>AI בעבודה
-            </a></li>
-            <li><a href="#" data-page="lesson-06" class="nav-link">
-                <span class="nav-num">06</span>AI ויצירתיות
-            </a></li>
-            <li><a href="#" data-page="lesson-07" class="nav-link">
-                <span class="nav-num">07</span>AI ובטיחות
-            </a></li>
-            <li><a href="#" data-page="lesson-08" class="nav-link">
-                <span class="nav-num">08</span>AI ועתיד העבודה
-            </a></li>
-            <li><a href="#" data-page="lesson-09" class="nav-link">
-                <span class="nav-num">09</span>ערכת הישרדות
-            </a></li>
+            <li><a href="#" data-page="lesson-01" class="nav-link"><span class="nav-num">01</span>מה זה AI?</a></li>
+            <li><a href="#" data-page="lesson-02" class="nav-link"><span class="nav-num">02</span>השחקנים הגדולים</a></li>
+            <li><a href="#" data-page="lesson-03" class="nav-link"><span class="nav-num">03</span>Prompting - יסודות</a></li>
+            <li><a href="#" data-page="lesson-04" class="nav-link"><span class="nav-num">04</span>Prompting - מתקדם</a></li>
+            <li><a href="#" data-page="lesson-05" class="nav-link"><span class="nav-num">05</span>AI בעבודה</a></li>
+            <li><a href="#" data-page="lesson-06" class="nav-link"><span class="nav-num">06</span>AI ויצירתיות</a></li>
+            <li><a href="#" data-page="lesson-07" class="nav-link"><span class="nav-num">07</span>AI ובטיחות</a></li>
+            <li><a href="#" data-page="lesson-08" class="nav-link"><span class="nav-num">08</span>AI ועתיד העבודה</a></li>
+            <li><a href="#" data-page="lesson-09" class="nav-link"><span class="nav-num">09</span>ערכת הישרדות</a></li>
             <li class="nav-divider">נספחים</li>
-            <li><a href="#" data-page="resources" class="nav-link">
-                <span class="nav-icon">📋</span>כלים ומשאבים
-            </a></li>
-            <li><a href="#" data-page="quick-reference" class="nav-link">
-                <span class="nav-icon">⚡</span>גיליון עזר
-            </a></li>
+            <li><a href="#" data-page="resources" class="nav-link"><span class="nav-icon">📋</span>כלים ומשאבים</a></li>
+            <li><a href="#" data-page="quick-reference" class="nav-link"><span class="nav-icon">⚡</span>גיליון עזר</a></li>
         </ul>
         <div class="sidebar-footer">
-            <div class="progress-container">
-                <div class="progress-text">התקדמות: <span id="progressText">0/9</span></div>
-                <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-            </div>
+            <div class="progress-text">התקדמות: <span id="progressText">0/9</span></div>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
         </div>
     </nav>
 
@@ -80,103 +68,190 @@
 
     <!-- Main Content -->
     <main class="content" id="content">
-        <!-- Home page (default) -->
+
+        <!-- ===== HOME PAGE ===== -->
         <div id="homePage" class="page-content">
-            <div class="hero">
-                <div class="hero-badge">קורס מקיף</div>
-                <h1 class="hero-title">AI<br><span>למתחילים</span></h1>
-                <p class="hero-subtitle">מ"מה זה ChatGPT?" ל"תן לי שנייה, אני שואל את ה-AI שלי"</p>
-                <button class="cta-button" onclick="navigateTo('lesson-01')">
-                    להתחיל ללמוד
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                </button>
-            </div>
 
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-num">9</div>
-                    <div class="feature-label">שיעורים</div>
-                    <div class="feature-desc">מהבסיס ועד שימוש מתקדם</div>
+            <!-- Hero -->
+            <section class="hero">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <div class="hero-badge anim-fade" data-delay="0">
+                            <span class="badge-dot"></span> 9 שיעורים • 30+ פרומפטים • 100% מעשי
+                        </div>
+                        <h1 class="hero-title anim-fade" data-delay="1">
+                            ללמוד<br><span class="gradient-text">בינה מלאכותית</span><br>מאפס.
+                        </h1>
+                        <p class="hero-subtitle anim-fade" data-delay="2">
+                            מ"מה זה ChatGPT?" ל"תן לי שנייה, אני שואל את ה-AI שלי". בלי מונחים מסובכים, עם הרבה הומור ודוגמאות מהחיים.
+                        </p>
+                        <div class="hero-actions anim-fade" data-delay="3">
+                            <button class="btn-primary" onclick="navigateTo('lesson-01')">
+                                להתחיל ללמוד
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l-7 7 7 7"/></svg>
+                            </button>
+                            <button class="btn-ghost" onclick="document.getElementById('lessonsSection').scrollIntoView({behavior:'smooth'})">
+                                לצפות בתוכן
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-visual anim-fade" data-delay="2">
+                        <div class="hero-glow"></div>
+                        <div class="hero-card card-1">
+                            <div class="hc-icon">🤖</div>
+                            <div class="hc-text">מה זה AI?</div>
+                        </div>
+                        <div class="hero-card card-2">
+                            <div class="hc-icon">💬</div>
+                            <div class="hc-text">Prompting</div>
+                        </div>
+                        <div class="hero-card card-3">
+                            <div class="hc-icon">🎨</div>
+                            <div class="hc-text">יצירתיות</div>
+                        </div>
+                        <div class="hero-card card-4">
+                            <div class="hc-icon">🛡️</div>
+                            <div class="hc-text">בטיחות</div>
+                        </div>
+                        <div class="hero-orbit"></div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-num">30+</div>
-                    <div class="feature-label">Prompts מוכנים</div>
-                    <div class="feature-desc">להעתקה ושימוש מיידי</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-num">5+</div>
-                    <div class="feature-label">שעות תוכן</div>
-                    <div class="feature-desc">בקצב שלכם</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-num">0₪</div>
-                    <div class="feature-label">כלים חינמיים</div>
-                    <div class="feature-desc">שמוזכרים בקורס</div>
-                </div>
-            </div>
+            </section>
 
-            <div class="lessons-grid">
-                <h2>תוכן הקורס</h2>
-                <div class="grid">
-                    <a href="#" data-page="lesson-01" class="lesson-card" onclick="navigateTo('lesson-01'); return false;">
-                        <span class="lesson-number">01</span>
+            <!-- Stats Strip -->
+            <section class="stats-strip">
+                <div class="stat anim-count" data-target="9">
+                    <div class="stat-num">0</div>
+                    <div class="stat-label">שיעורים מקיפים</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat anim-count" data-target="30">
+                    <div class="stat-num">0<span class="stat-plus">+</span></div>
+                    <div class="stat-label">Prompts מוכנים</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat anim-count" data-target="5">
+                    <div class="stat-num">0<span class="stat-plus">+</span></div>
+                    <div class="stat-label">שעות תוכן</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num">∞</div>
+                    <div class="stat-label">כלים חינמיים</div>
+                </div>
+            </section>
+
+            <!-- Lessons Grid -->
+            <section class="lessons-section" id="lessonsSection">
+                <div class="section-header">
+                    <h2 class="section-title anim-slide">תוכן הקורס</h2>
+                    <p class="section-desc anim-slide">9 שיעורים שייקחו אתכם מאפס לגיבורי AI</p>
+                </div>
+                <div class="lessons-grid">
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-01'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">01</span>
+                            <span class="lc-icon">🧠</span>
+                        </div>
                         <h3>מה זה AI?</h3>
                         <p>הבנה בסיסית, היסטוריה קצרה, ולמה דווקא עכשיו</p>
-                        <span class="lesson-time">~10 דק'</span>
+                        <div class="lc-footer"><span class="lc-time">~10 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-02" class="lesson-card" onclick="navigateTo('lesson-02'); return false;">
-                        <span class="lesson-number">02</span>
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-02'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">02</span>
+                            <span class="lc-icon">🗺️</span>
+                        </div>
                         <h3>השחקנים הגדולים</h3>
-                        <p>ChatGPT, Claude, Gemini, Grok, Copilot</p>
-                        <span class="lesson-time">~12 דק'</span>
+                        <p>ChatGPT, Claude, Gemini, Grok, Copilot - מי עושה מה</p>
+                        <div class="lc-footer"><span class="lc-time">~12 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-03" class="lesson-card" onclick="navigateTo('lesson-03'); return false;">
-                        <span class="lesson-number">03</span>
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-03'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">03</span>
+                            <span class="lc-icon">💬</span>
+                        </div>
                         <h3>Prompting - יסודות</h3>
-                        <p>מה זה Prompt, 5 עקרונות הזהב, וטכניקות בסיסיות</p>
-                        <span class="lesson-time">~10 דק'</span>
+                        <p>מה זה Prompt, 5 עקרונות הזהב, טכניקות בסיסיות</p>
+                        <div class="lc-footer"><span class="lc-time">~10 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-04" class="lesson-card" onclick="navigateTo('lesson-04'); return false;">
-                        <span class="lesson-number">04</span>
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-04'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">04</span>
+                            <span class="lc-icon">🚀</span>
+                        </div>
                         <h3>Prompting - מתקדם</h3>
-                        <p>שרשראות, ביקורת עצמית, ומאגר Prompts</p>
-                        <span class="lesson-time">~12 דק'</span>
+                        <p>שרשראות, ביקורת עצמית, מאגר Prompts</p>
+                        <div class="lc-footer"><span class="lc-time">~12 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-05" class="lesson-card" onclick="navigateTo('lesson-05'); return false;">
-                        <span class="lesson-number">05</span>
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-05'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">05</span>
+                            <span class="lc-icon">💼</span>
+                        </div>
                         <h3>AI בעבודה</h3>
                         <p>מיילים, מצגות, סיכומים, ניתוח נתונים</p>
-                        <span class="lesson-time">~12 דק'</span>
+                        <div class="lc-footer"><span class="lc-time">~12 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-06" class="lesson-card" onclick="navigateTo('lesson-06'); return false;">
-                        <span class="lesson-number">06</span>
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-06'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">06</span>
+                            <span class="lc-icon">🎨</span>
+                        </div>
                         <h3>AI ויצירתיות</h3>
                         <p>תמונות, כתיבה יצירתית, וידאו, מולטימדיה</p>
-                        <span class="lesson-time">~12 דק'</span>
+                        <div class="lc-footer"><span class="lc-time">~12 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-07" class="lesson-card" onclick="navigateTo('lesson-07'); return false;">
-                        <span class="lesson-number">07</span>
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-07'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">07</span>
+                            <span class="lc-icon">🛡️</span>
+                        </div>
                         <h3>AI ובטיחות</h3>
                         <p>פרטיות, הזיות, Deepfakes, כללי זהב</p>
-                        <span class="lesson-time">~10 דק'</span>
+                        <div class="lc-footer"><span class="lc-time">~10 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-08" class="lesson-card" onclick="navigateTo('lesson-08'); return false;">
-                        <span class="lesson-number">08</span>
+                    <a href="#" class="lesson-card anim-slide" onclick="navigateTo('lesson-08'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">08</span>
+                            <span class="lc-icon">🔮</span>
+                        </div>
                         <h3>AI ועתיד העבודה</h3>
                         <p>מקצועות בסיכון, הזדמנויות חדשות</p>
-                        <span class="lesson-time">~10 דק'</span>
+                        <div class="lc-footer"><span class="lc-time">~10 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
-                    <a href="#" data-page="lesson-09" class="lesson-card" onclick="navigateTo('lesson-09'); return false;">
-                        <span class="lesson-number">09</span>
-                        <h3>ערכת הישרדות</h3>
-                        <p>10 כלים חינמיים, קהילות, משאבים</p>
-                        <span class="lesson-time">~8 דק'</span>
+                    <a href="#" class="lesson-card anim-slide card-bonus" onclick="navigateTo('lesson-09'); return false;">
+                        <div class="lc-header">
+                            <span class="lc-num">09</span>
+                            <span class="lc-icon">🎁</span>
+                        </div>
+                        <h3>בונוס: ערכת הישרדות</h3>
+                        <p>10 כלים חינמיים, קהילות, ומשאבים להמשך</p>
+                        <div class="lc-footer"><span class="lc-time">~8 דק'</span><span class="lc-arrow">←</span></div>
                     </a>
                 </div>
-            </div>
+            </section>
+
+            <!-- CTA bottom -->
+            <section class="cta-section">
+                <div class="cta-inner anim-slide">
+                    <h2>מוכנים להתחיל?</h2>
+                    <p>שיעור ראשון לוקח 10 דקות. אחרי זה לא תפסיקו.</p>
+                    <button class="btn-primary btn-lg" onclick="navigateTo('lesson-01')">
+                        יאללה, נתחיל
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l-7 7 7 7"/></svg>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <p>נבנה עם ❤️ ו-AI • כל הזכויות שמורות © 2026</p>
+            </footer>
         </div>
 
-        <!-- Dynamic lesson content -->
+        <!-- ===== LESSON PAGE ===== -->
         <div id="lessonPage" class="page-content" style="display:none;">
             <article class="lesson-content" id="lessonContent"></article>
             <div class="lesson-nav" id="lessonNav"></div>
