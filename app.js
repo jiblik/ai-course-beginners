@@ -1,5 +1,5 @@
 // ============================================
-// AI Course - App Logic
+// AI Course - App Logic v2
 // ============================================
 
 const pages = [
@@ -22,6 +22,13 @@ const lessonNames = {
     'quick-reference': 'גיליון עזר'
 };
 
+const lessonIcons = {
+    'lesson-01': '🧠', 'lesson-02': '🗺️', 'lesson-03': '💬',
+    'lesson-04': '🚀', 'lesson-05': '💼', 'lesson-06': '🎨',
+    'lesson-07': '🛡️', 'lesson-08': '🔮', 'lesson-09': '🎁',
+    'resources': '📋', 'quick-reference': '⚡'
+};
+
 // State
 let currentPage = 'home';
 let completedLessons = JSON.parse(localStorage.getItem('ai-course-completed') || '[]');
@@ -40,7 +47,6 @@ function navigateTo(page) {
     currentPage = page;
     window.location.hash = page === 'home' ? '' : page;
 
-    // Update active nav
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.toggle('active', link.dataset.page === page);
     });
@@ -54,17 +60,13 @@ function navigateTo(page) {
         loadLesson(page);
     }
 
-    // Mark lesson as completed
     if (page.startsWith('lesson-') && !completedLessons.includes(page)) {
         completedLessons.push(page);
         localStorage.setItem('ai-course-completed', JSON.stringify(completedLessons));
         updateProgress();
     }
 
-    // Close mobile sidebar
     closeSidebar();
-
-    // Scroll to top
     window.scrollTo({ top: 0 });
 }
 
@@ -80,20 +82,130 @@ async function loadLesson(page) {
         if (!response.ok) throw new Error('Not found');
         let text = await response.text();
 
-        // Remove the wrapping <div dir="rtl"> tags
-        text = text.replace(/<div dir="rtl">\s*/g, '').replace(/<\/div>\s*$/g, '');
+        // Remove wrapping <div dir="rtl"> tags
+        text = text.replace(/<div dir="rtl">\s*/g, '').replace(/\s*<\/div>\s*$/g, '');
 
-        contentEl.innerHTML = marked.parse(text);
+        let html = marked.parse(text);
+
+        // Post-process: wrap emoji-headed h2 sections in visual cards
+        html = wrapSectionCards(html);
+
+        // Add lesson hero header
+        const lessonNum = page.replace('lesson-', '').replace('resources', '').replace('quick-reference', '');
+        const icon = lessonIcons[page] || '';
+        const name = lessonNames[page] || '';
+
+        if (page.startsWith('lesson-')) {
+            // Extract title from first h1
+            const h1Match = html.match(/<h1[^>]*>(.*?)<\/h1>/);
+            const title = h1Match ? h1Match[1] : name;
+            // Remove the original h1
+            html = html.replace(/<h1[^>]*>.*?<\/h1>/, '');
+
+            const heroHtml = `
+                <div class="lesson-hero" data-num="${lessonNum}">
+                    <span class="lesson-tag">שיעור ${lessonNum} ${icon}</span>
+                    <h1>${title}</h1>
+                </div>`;
+            html = heroHtml + html;
+        }
+
+        contentEl.innerHTML = html;
+
+        // Intercept .md links
+        interceptMdLinks(contentEl);
         addCopyButtons();
+        addVisualBlocks(contentEl);
         buildLessonNav(page, navEl);
 
-        // Animate in
         contentEl.style.animation = 'none';
-        contentEl.offsetHeight; // trigger reflow
+        contentEl.offsetHeight;
         contentEl.style.animation = 'fadeIn 0.3s ease';
     } catch (err) {
         contentEl.innerHTML = '<div class="loading">שגיאה בטעינת השיעור</div>';
     }
+}
+
+function wrapSectionCards(html) {
+    const sectionMap = {
+        '🎯': 'target',
+        '📖': 'content',
+        '💡': 'example',
+        '🧪': 'exercise',
+        '🎮': 'quiz',
+        '📌': 'summary'
+    };
+
+    for (const [emoji, cls] of Object.entries(sectionMap)) {
+        // Match h2 that starts with the emoji and all content until next h2 or hr
+        const regex = new RegExp(
+            `(<h2[^>]*>\\s*${emoji.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')}[^<]*<\\/h2>)`,
+            'g'
+        );
+        html = html.replace(regex, (match) => {
+            return `<div class="section-card ${cls}">${match}`;
+        });
+    }
+
+    // Close section cards before the next section card or at end
+    // Simple approach: close before any new section-card div
+    html = html.replace(/(<div class="section-card)/g, '</div>$1');
+    // Remove the first orphan </div>
+    html = html.replace('</div><div class="section-card', '<div class="section-card');
+
+    return html;
+}
+
+function interceptMdLinks(container) {
+    container.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.endsWith('.md')) {
+            const page = href.replace('.md', '');
+            if (pages.includes(page) || page === 'README') {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (page === 'README') {
+                        navigateTo('home');
+                    } else {
+                        navigateTo(page);
+                    }
+                });
+            }
+        }
+    });
+}
+
+function addCopyButtons() {
+    document.querySelectorAll('.lesson-content pre').forEach(pre => {
+        if (pre.querySelector('.copy-btn')) return;
+        const btn = document.createElement('button');
+        btn.className = 'copy-btn';
+        btn.textContent = 'העתק';
+        btn.addEventListener('click', () => {
+            const code = pre.querySelector('code')?.textContent || pre.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                btn.textContent = '✓ הועתק!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'העתק';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+        pre.appendChild(btn);
+    });
+}
+
+function addVisualBlocks(container) {
+    // Add visual illustration blocks after certain h3 headers
+    const headers = container.querySelectorAll('h3');
+    headers.forEach(h3 => {
+        const text = h3.textContent;
+        // Add visual timeline for history sections
+        if (text.includes('היסטוריה') || text.includes('שנות ה-')) {
+            // Already has emoji-based visual, skip
+        }
+    });
 }
 
 function buildLessonNav(page, navEl) {
@@ -104,39 +216,24 @@ function buildLessonNav(page, navEl) {
     if (idx > 0) {
         const prev = allPages[idx - 1];
         const prevName = prev === 'home' ? 'דף הבית' : lessonNames[prev];
+        const prevIcon = prev === 'home' ? '🏠' : (lessonIcons[prev] || '');
         html += `<a href="#" onclick="navigateTo('${prev}'); return false;">
-            <span class="nav-label">← הקודם</span>
-            <span class="nav-title">${prevName}</span>
+            <span class="nav-label">הקודם →</span>
+            <span class="nav-title">${prevIcon} ${prevName}</span>
         </a>`;
     }
 
     if (idx < allPages.length - 1) {
         const next = allPages[idx + 1];
         const nextName = lessonNames[next];
+        const nextIcon = lessonIcons[next] || '';
         html += `<a href="#" class="next-link" onclick="navigateTo('${next}'); return false;">
-            <span class="nav-label">הבא →</span>
-            <span class="nav-title">${nextName}</span>
+            <span class="nav-label">← הבא</span>
+            <span class="nav-title">${nextIcon} ${nextName}</span>
         </a>`;
     }
 
     navEl.innerHTML = html;
-}
-
-function addCopyButtons() {
-    document.querySelectorAll('.lesson-content pre').forEach(pre => {
-        const btn = document.createElement('button');
-        btn.className = 'copy-btn';
-        btn.textContent = 'העתק';
-        btn.addEventListener('click', () => {
-            const code = pre.querySelector('code')?.textContent || pre.textContent;
-            navigator.clipboard.writeText(code).then(() => {
-                btn.textContent = 'הועתק!';
-                setTimeout(() => btn.textContent = 'העתק', 2000);
-            });
-        });
-        pre.style.position = 'relative';
-        pre.appendChild(btn);
-    });
 }
 
 // ============================================
@@ -149,7 +246,6 @@ function updateProgress() {
     document.getElementById('progressText').textContent = `${done}/${total}`;
     document.getElementById('progressFill').style.width = `${(done / total) * 100}%`;
 
-    // Update nav links
     document.querySelectorAll('.nav-link').forEach(link => {
         if (completedLessons.includes(link.dataset.page)) {
             link.classList.add('completed');
@@ -178,7 +274,6 @@ function closeSidebar() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Nav link clicks
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -186,23 +281,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile menu
     document.getElementById('menuToggle').addEventListener('click', () => {
         const sidebar = document.getElementById('sidebar');
         sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
     });
     document.getElementById('overlay').addEventListener('click', closeSidebar);
 
-    // Handle hash navigation
     const hash = window.location.hash.slice(1);
     if (hash && pages.includes(hash)) {
         navigateTo(hash);
     }
 
-    // Update progress
     updateProgress();
 
-    // Hash change
     window.addEventListener('hashchange', () => {
         const h = window.location.hash.slice(1);
         if (h && pages.includes(h)) {
