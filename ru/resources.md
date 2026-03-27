@@ -95,8 +95,8 @@
 |---|---|---|---|
 | **r/ChatGPT** | Reddit | Английский | [reddit.com/r/ChatGPT](https://reddit.com/r/ChatGPT) |
 | **r/artificial** | Reddit | Английский | [reddit.com/r/artificial](https://reddit.com/r/artificial) |
-| **Нейросети и ИИ** | Telegram | Русский | Поиск в Telegram |
-| **AI News** | Telegram | Русский | Поиск в Telegram |
+| **Prompt Engineering** | Reddit | Английский | [reddit.com/r/PromptEngineering](https://reddit.com/r/PromptEngineering) |
+| **AI Tools** | Reddit | Английский | [reddit.com/r/aitools](https://reddit.com/r/aitools) |
 
 ---
 
