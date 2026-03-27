@@ -372,7 +372,6 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
 
 .hero-text {
     flex: 1;
-    text-align: right;
 }
 
 .hero-badge {
@@ -593,7 +592,6 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    text-align: right;
 }
 .lesson-card::before {
     content: '';
@@ -701,8 +699,6 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
     max-width: 720px;
     margin: 0 auto;
     padding: 48px 40px 80px;
-    direction: rtl;
-    text-align: right;
 }
 
 .lesson-content h1 {
@@ -802,8 +798,8 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
     border: 1px solid var(--border);
 }
 .lesson-content thead { background: var(--accent); color: var(--bg); }
-.lesson-content th { padding: 12px 16px; text-align: right; font-weight: 600; font-size: 12px; letter-spacing: 0.3px; }
-.lesson-content td { padding: 11px 16px; border-bottom: 1px solid var(--border); text-align: right; }
+.lesson-content th { padding: 12px 16px; text-align: start; font-weight: 600; font-size: 12px; letter-spacing: 0.3px; }
+.lesson-content td { padding: 11px 16px; border-bottom: 1px solid var(--border); text-align: start; }
 .lesson-content tbody tr:last-child td { border-bottom: none; }
 .lesson-content tbody tr:hover { background: var(--bg-alt); }
 
@@ -827,11 +823,9 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
     padding: 22px 26px;
     margin: 20px 0;
     overflow-x: auto;
-    direction: rtl;
-    text-align: right;
     line-height: 1.7;
     font-size: 14px;
-    font-family: 'Rubik', sans-serif;
+    font-family: inherit;
     position: relative;
     border: 1px solid rgba(255,255,255,0.06);
 }
@@ -843,9 +837,7 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
 .copy-btn {
     position: absolute;
     top: 12px;
-    left: 12px;
-    right: auto;
-    direction: ltr;
+    inset-inline-end: 12px;
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.1);
     color: rgba(255,255,255,0.5);
@@ -927,7 +919,6 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
     padding: 0 40px 80px;
     display: flex;
     gap: 14px;
-    direction: rtl;
 }
 .lesson-nav a {
     flex: 1;
@@ -940,12 +931,11 @@ body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSys
     text-decoration: none;
     color: var(--text);
     transition: all var(--transition);
-    text-align: right;
 }
 .lesson-nav a:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-2px); }
 .lesson-nav .nav-label { font-size: 11px; color: var(--text-tertiary); margin-bottom: 4px; font-weight: 600; letter-spacing: 0.5px; }
 .lesson-nav .nav-title { font-size: 14px; font-weight: 600; }
-.lesson-nav .next-link { text-align: left; }
+.lesson-nav .next-link { text-align: end; }
 
 /* MD links as buttons */
 .lesson-content > p:last-of-type > a[href$=".md"],
