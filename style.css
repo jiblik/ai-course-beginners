@@ -64,9 +64,103 @@ body {
     color: var(--text);
     line-height: 1.7;
     font-size: 16px;
-    direction: rtl;
     overflow-x: hidden;
 }
+
+/* LTR/RTL toggle via body class */
+body.lang-rtl { direction: rtl; }
+body.lang-ltr { direction: ltr; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+
+/* ============================================
+   Language Switcher Bar
+   ============================================ */
+.lang-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: var(--accent);
+    color: var(--bg);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lang-options {
+    display: flex;
+    gap: 4px;
+    background: rgba(255,255,255,0.1);
+    padding: 3px;
+    border-radius: 100px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border: none;
+    border-radius: 100px;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    font-family: inherit;
+}
+
+.lang-btn:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+.lang-btn.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-weight: 600;
+}
+
+.lang-flag {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.lang-name {
+    line-height: 1;
+}
+
+/* Adjust everything for lang bar height */
+.sidebar { top: 40px; height: calc(100vh - 40px); }
+.mobile-header { top: 40px; }
+.theme-toggle { bottom: 24px; }
+.reading-progress { top: 40px; }
+
+/* Mobile language button */
+.mobile-lang {
+    margin-inline-start: auto;
+}
+.mobile-lang-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+.mobile-lang-btn:hover { background: var(--accent-light); }
 
 /* ============================================
    Reading Progress Bar
@@ -115,12 +209,12 @@ body {
    ============================================ */
 .sidebar {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 40px;
+    inset-inline-start: 0;
     width: var(--sidebar-width);
-    height: 100vh;
+    height: calc(100vh - 40px);
     background-color: var(--bg);
-    border-left: 1px solid var(--border);
+    border-inline-end: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     z-index: 100;
@@ -193,8 +287,7 @@ body {
 .nav-link.completed::after {
     content: '✓';
     position: absolute;
-    left: 10px;
-    right: auto;
+    inset-inline-end: 10px;
     font-size: 11px;
     color: var(--green);
     font-weight: 700;
@@ -255,9 +348,10 @@ body {
    Main Content
    ============================================ */
 .content {
-    margin-right: var(--sidebar-width);
-    margin-left: 0;
+    margin-inline-start: var(--sidebar-width);
+    margin-inline-end: 0;
     min-height: 100vh;
+    padding-top: 40px;
     transition: margin var(--transition);
 }
 
@@ -663,13 +757,13 @@ body {
 
 .lesson-content ul, .lesson-content ol {
     margin-bottom: 16px;
-    padding-right: 24px;
-    padding-left: 0;
+    padding-inline-start: 24px;
+    padding-inline-end: 0;
 }
 .lesson-content li { margin-bottom: 6px; font-size: 15px; }
 
 .lesson-content blockquote {
-    border-right: 3px solid var(--blue);
+    border-inline-start: 3px solid var(--blue);
     border-left: none;
     padding: 16px 20px 16px 0;
     margin: 24px 0;
@@ -689,12 +783,12 @@ body {
     margin: 32px 0;
     box-shadow: var(--shadow-xs);
 }
-.section-card.target  { border-right: 4px solid var(--blue);   border-left: none; }
-.section-card.content { border-right: 4px solid var(--green);  border-left: none; }
-.section-card.example { border-right: 4px solid var(--orange); border-left: none; }
-.section-card.exercise{ border-right: 4px solid var(--purple); border-left: none; }
-.section-card.quiz    { border-right: 4px solid var(--red);    border-left: none; }
-.section-card.summary { border-right: 4px solid var(--accent); border-left: none; }
+.section-card.target  { border-inline-start: 4px solid var(--blue); }
+.section-card.content { border-inline-start: 4px solid var(--green); }
+.section-card.example { border-inline-start: 4px solid var(--orange); }
+.section-card.exercise{ border-inline-start: 4px solid var(--purple); }
+.section-card.quiz    { border-inline-start: 4px solid var(--red); }
+.section-card.summary { border-inline-start: 4px solid var(--accent); }
 .section-card h2 { margin-top: 0 !important; font-size: 18px !important; }
 
 /* Tables */
@@ -920,13 +1014,17 @@ body {
 
 @media (max-width: 768px) {
     .mobile-header { display: flex; }
+    .lang-bar { display: none; }
     .sidebar {
-        transform: translateX(100%);
+        transform: translateX(-100%);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: none;
+        top: 0;
+        height: 100vh;
     }
-    .sidebar.open { transform: translateX(0); box-shadow: -8px 0 30px rgba(0,0,0,0.15); }
-    .content { margin-right: 0; padding-top: 56px; }
+    .lang-rtl .sidebar { transform: translateX(100%); }
+    .sidebar.open { transform: translateX(0) !important; box-shadow: 8px 0 30px rgba(0,0,0,0.15); }
+    .content { margin-inline-start: 0; padding-top: 56px; }
     .hero { padding: 32px 20px 24px; }
     .hero-title { font-size: 36px !important; }
     .hero-subtitle { font-size: 15px; }
