@@ -86,11 +86,10 @@
 
 | Канал | Язык | Чем полезен |
 |---|---|---|
-| [**Droider**](https://youtube.com/@Droider) | Русский | Технологии и ИИ, обзоры моделей и инструментов |
-| [**AI Nikita**](https://youtube.com/@ai.nikita) | Русский | Создание контента с нейросетями, видеогенерация |
-| [**Wylsacom**](https://youtube.com/@Wylsacom) | Русский | Гаджеты и ИИ-инструменты в повседневной жизни |
-| [**Matt Wolfe**](https://youtube.com/@maboroshi) | Английский | Обзоры новых ИИ-инструментов |
+| [**Matt Wolfe**](https://youtube.com/@mreflow) | Английский | Обзоры новых ИИ-инструментов (890K подписчиков) |
 | [**AI Explained**](https://youtube.com/@aiexplained-official) | Английский | Глубокие объяснения ИИ |
+| [**Fireship**](https://youtube.com/@Fireship) | Английский | Быстрые и забавные обзоры технологий |
+| [**All About AI**](https://youtube.com/@AllAboutAI) | Английский | Практические руководства для начинающих |
 
 ### Telegram-каналы (главная русскоязычная ИИ-среда):
 

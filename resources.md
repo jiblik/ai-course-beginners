@@ -84,7 +84,7 @@
 
 | ערוץ | שפה | למי מתאים | תוכן |
 |------|-----|-----------|------|
-| [**Matt Wolfe**](https://youtube.com/@maboroshi) | אנגלית | כולם | סקירות כלים חדשים |
+| [**Matt Wolfe**](https://youtube.com/@mreflow) | אנגלית | כולם | סקירות כלים חדשים |
 | [**AI Explained**](https://youtube.com/@aiexplained-official) | אנגלית | סקרנים | הסברים מעמיקים |
 | [**All About AI**](https://youtube.com/@AllAboutAI) | אנגלית | מתחילים | מדריכים פרקטיים |
 | [**Fireship**](https://youtube.com/@Fireship) | אנגלית | טכניים | סקירות מהירות ומצחיקות |

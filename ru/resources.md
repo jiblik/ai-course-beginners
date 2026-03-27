@@ -80,20 +80,9 @@
 
 ## 🎥 Рекомендуемые YouTube-каналы
 
-### Русскоязычные:
-
 | Канал | Для кого | Контент |
 |---|---|---|
-| [**Droider**](https://youtube.com/@Droider) | Для всех | Технологии, ИИ-обзоры, сравнения моделей |
-| [**AI Nikita**](https://youtube.com/@ai.nikita) | Креативщики | Создание контента с нейросетями |
-| [**Wylsacom**](https://youtube.com/@Wylsacom) | Для всех | Гаджеты + ИИ в повседневной жизни |
-| [**Rozetked**](https://youtube.com/@rozetked) | Для всех | Техно-новости, сравнения нейросетей |
-
-### Англоязычные:
-
-| Канал | Для кого | Контент |
-|---|---|---|
-| [**Matt Wolfe**](https://youtube.com/@maboroshi) | Для всех | Обзоры новых ИИ-инструментов |
+| [**Matt Wolfe**](https://youtube.com/@mreflow) | Для всех | Обзоры новых ИИ-инструментов (890K подписчиков) |
 | [**AI Explained**](https://youtube.com/@aiexplained-official) | Любопытные | Глубокие объяснения |
 | [**All About AI**](https://youtube.com/@AllAboutAI) | Начинающие | Практические руководства |
 | [**Fireship**](https://youtube.com/@Fireship) | Технически подкованные | Быстрые и забавные обзоры |

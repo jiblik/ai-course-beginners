@@ -98,7 +98,7 @@
 
 | ערוץ | שפה | למה שווה |
 |------|-----|----------|
-| [**Matt Wolfe**](https://youtube.com/@maboroshi) | אנגלית | סקירות כלים חדשים |
+| [**Matt Wolfe**](https://youtube.com/@mreflow) | אנגלית | סקירות כלים חדשים |
 | [**AI Explained**](https://youtube.com/@aiexplained-official) | אנגלית | הסברים מעמיקים על AI |
 | [**All About AI**](https://youtube.com/@AllAboutAI) | אנגלית | מדריכים פרקטיים |
 | [**Fireship**](https://youtube.com/@Fireship) | אנגלית | סקירות מהירות ומצחיקות |
