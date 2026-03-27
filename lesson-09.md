@@ -84,25 +84,24 @@
 
 ## 📚 קהילות ומשאבים להמשך לימוד
 
-### באנגלית (הכי עדכני):
-
-| משאב | סוג | למה שווה |
-|------|-----|----------|
-| **r/ChatGPT** (Reddit) | קהילה | טיפים, חדשות, דוגמאות |
-| **r/artificial** (Reddit) | קהילה | דיונים על AI |
-| **The Rundown AI** | ניוזלטר | סיכום יומי של חדשות AI |
-| **TLDR AI** | ניוזלטר | חדשות AI טכניות בקצרה |
-| **Matt Wolfe YouTube** | ערוץ | סקירות כלים חדשים |
-| **AI Explained YouTube** | ערוץ | הסברים מעמיקים על AI |
-
 ### בעברית:
 
 | משאב | סוג | למה שווה |
 |------|-----|----------|
-| **AI Israel** (פייסבוק) | קבוצה | קהילה ישראלית פעילה |
-| **בינה מלאכותית לעסקים** (פייסבוק) | קבוצה | פוקוס על שימושים עסקיים |
-| **GeekTime** | אתר | כתבות על טכנולוגיה ו-AI |
-| **TheMarker Tech** | אתר | חדשות טכנולוגיה בעברית |
+| [**ChatGPT Israel**](https://www.facebook.com/groups/715153780127233) | קבוצת פייסבוק | ~200,000 חברים! הקהילה הישראלית הכי גדולה |
+| [**AI ISRAEL - כלים ושימושים**](https://www.facebook.com/groups/aisrael/) | קבוצת פייסבוק | דיונים, חדשות, שימושים עסקיים |
+| [**GeekTime**](https://www.geektime.co.il/) | אתר | כתבות על טכנולוגיה ו-AI |
+| [**Machine Learning Israel**](https://machinelearning.co.il/) | פודקאסט + אתר | ראיונות עם מובילי AI ישראלים |
+| [**AI Israel Club**](https://aiisraelclub.co.il/) | קהילה | חיבור בין קהילות AI בישראל |
+
+### ערוצי YouTube:
+
+| ערוץ | שפה | למה שווה |
+|------|-----|----------|
+| [**Matt Wolfe**](https://youtube.com/@maboroshi) | אנגלית | סקירות כלים חדשים |
+| [**AI Explained**](https://youtube.com/@aiexplained-official) | אנגלית | הסברים מעמיקים על AI |
+| [**All About AI**](https://youtube.com/@AllAboutAI) | אנגלית | מדריכים פרקטיים |
+| [**Fireship**](https://youtube.com/@Fireship) | אנגלית | סקירות מהירות ומצחיקות |
 
 ### ניוזלטרים מומלצים:
 1. **The Rundown AI** - 5 דקות קריאה, כל יום, כל מה שחשוב

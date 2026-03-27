@@ -84,21 +84,29 @@
 
 | ערוץ | שפה | למי מתאים | תוכן |
 |------|-----|-----------|------|
-| **Matt Wolfe** | אנגלית | כולם | סקירות כלים חדשים |
-| **AI Explained** | אנגלית | סקרנים | הסברים מעמיקים |
-| **All About AI** | אנגלית | מתחילים | מדריכים פרקטיים |
-| **Fireship** | אנגלית | טכניים | סקירות מהירות ומצחיקות |
+| [**Matt Wolfe**](https://youtube.com/@maboroshi) | אנגלית | כולם | סקירות כלים חדשים |
+| [**AI Explained**](https://youtube.com/@aiexplained-official) | אנגלית | סקרנים | הסברים מעמיקים |
+| [**All About AI**](https://youtube.com/@AllAboutAI) | אנגלית | מתחילים | מדריכים פרקטיים |
+| [**Fireship**](https://youtube.com/@Fireship) | אנגלית | טכניים | סקירות מהירות ומצחיקות |
 
 ---
 
-## 👥 קהילות
+## 👥 קהילות בעברית
 
-| קהילה | פלטפורמה | שפה | לינק |
-|--------|----------|-----|------|
-| **r/ChatGPT** | Reddit | אנגלית | [reddit.com/r/ChatGPT](https://reddit.com/r/ChatGPT) |
-| **r/artificial** | Reddit | אנגלית | [reddit.com/r/artificial](https://reddit.com/r/artificial) |
-| **AI Israel** | Facebook | עברית | חפשו בפייסבוק |
-| **בינה מלאכותית לעסקים** | Facebook | עברית | חפשו בפייסבוק |
+| קהילה | פלטפורמה | חברים | לינק |
+|--------|----------|------|------|
+| **ChatGPT Israel** | Facebook | ~200K | [קישור](https://www.facebook.com/groups/715153780127233) |
+| **AI ISRAEL - כלים ושימושים** | Facebook | — | [קישור](https://www.facebook.com/groups/aisrael/) |
+| **AI Israel Club** | אתר | — | [aiisraelclub.co.il](https://aiisraelclub.co.il/) |
+| **Machine Learning Israel** | פודקאסט | — | [machinelearning.co.il](https://machinelearning.co.il/) |
+
+## 👥 קהילות באנגלית
+
+| קהילה | פלטפורמה | לינק |
+|--------|----------|------|
+| **r/ChatGPT** | Reddit | [reddit.com/r/ChatGPT](https://reddit.com/r/ChatGPT) |
+| **r/artificial** | Reddit | [reddit.com/r/artificial](https://reddit.com/r/artificial) |
+| **r/PromptEngineering** | Reddit | [reddit.com/r/PromptEngineering](https://reddit.com/r/PromptEngineering) |
 
 ---
 

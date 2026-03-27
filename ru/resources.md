@@ -80,23 +80,46 @@
 
 ## 🎥 Рекомендуемые YouTube-каналы
 
-| Канал | Язык | Для кого | Контент |
-|---|---|---|---|
-| **Matt Wolfe** | Английский | Для всех | Обзоры новых инструментов |
-| **AI Explained** | Английский | Любопытные | Глубокие объяснения |
-| **All About AI** | Английский | Начинающие | Практические руководства |
-| **Fireship** | Английский | Технически подкованные | Быстрые и забавные обзоры |
+### Русскоязычные:
+
+| Канал | Для кого | Контент |
+|---|---|---|
+| [**Droider**](https://youtube.com/@Droider) | Для всех | Технологии, ИИ-обзоры, сравнения моделей |
+| [**AI Nikita**](https://youtube.com/@ai.nikita) | Креативщики | Создание контента с нейросетями |
+| [**Wylsacom**](https://youtube.com/@Wylsacom) | Для всех | Гаджеты + ИИ в повседневной жизни |
+| [**Rozetked**](https://youtube.com/@rozetked) | Для всех | Техно-новости, сравнения нейросетей |
+
+### Англоязычные:
+
+| Канал | Для кого | Контент |
+|---|---|---|
+| [**Matt Wolfe**](https://youtube.com/@maboroshi) | Для всех | Обзоры новых ИИ-инструментов |
+| [**AI Explained**](https://youtube.com/@aiexplained-official) | Любопытные | Глубокие объяснения |
+| [**All About AI**](https://youtube.com/@AllAboutAI) | Начинающие | Практические руководства |
+| [**Fireship**](https://youtube.com/@Fireship) | Технически подкованные | Быстрые и забавные обзоры |
 
 ---
 
-## 👥 Сообщества
+## 💬 Telegram-каналы (главная русскоязычная ИИ-среда)
 
-| Сообщество | Платформа | Язык | Ссылка |
-|---|---|---|---|
-| **r/ChatGPT** | Reddit | Английский | [reddit.com/r/ChatGPT](https://reddit.com/r/ChatGPT) |
-| **r/artificial** | Reddit | Английский | [reddit.com/r/artificial](https://reddit.com/r/artificial) |
-| **Prompt Engineering** | Reddit | Английский | [reddit.com/r/PromptEngineering](https://reddit.com/r/PromptEngineering) |
-| **AI Tools** | Reddit | Английский | [reddit.com/r/aitools](https://reddit.com/r/aitools) |
+| Канал | Подписчики | О чём |
+|---|---|---|
+| [**GPTMain News**](https://t.me/GPTMainNews) | ~1,4 млн | Обновления LLM, практические применения |
+| [**Hi, AI**](https://t.me/hiaimedia) | ~1,2 млн | ИИ и техно-новости с подробным анализом |
+| [**ChatGPT / Нейросети**](https://t.me/gptpublic) | ~372 тыс. | Промпты, новости моделей, примеры |
+| [**Нейродвиж**](https://t.me/neuraldvig) | ~293 тыс. | Новости ИИ, мемы, бесплатные курсы |
+| [**эйай ньюз**](https://t.me/ai_newz) | ~76 тыс. | Ежедневные прорывы (от экс-исследователя Meta) |
+| [**Промпты / Ринат Шакиров**](https://t.me/dailyprompts) | ~22 тыс. | Готовые промпты каждый день |
+
+---
+
+## 👥 Сообщества (Reddit)
+
+| Сообщество | Ссылка |
+|---|---|
+| **r/ChatGPT** | [reddit.com/r/ChatGPT](https://reddit.com/r/ChatGPT) |
+| **r/artificial** | [reddit.com/r/artificial](https://reddit.com/r/artificial) |
+| **r/PromptEngineering** | [reddit.com/r/PromptEngineering](https://reddit.com/r/PromptEngineering) |
 
 ---
 
