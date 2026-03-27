@@ -176,6 +176,9 @@ function switchLang(lang) {
     // Hero title (innerHTML)
     document.getElementById('heroTitle').innerHTML = t('hero-title');
 
+    // Update URL hash with language
+    window.location.hash = buildHash(currentPage, lang);
+
     // Re-load current lesson if on one
     if (currentPage !== 'home') {
         loadLesson(currentPage);
@@ -301,9 +304,26 @@ function animateCounter(el) {
 // ============================================
 // Navigation
 // ============================================
+function buildHash(page, lang) {
+    if (page === 'home') return lang === 'he' ? '' : lang;
+    return lang === 'he' ? page : `${lang}/${page}`;
+}
+
+function parseHash(hash) {
+    if (!hash) return { lang: null, page: 'home' };
+    // #ru  or  #ru/lesson-01
+    if (hash === 'ru') return { lang: 'ru', page: 'home' };
+    if (hash.startsWith('ru/')) {
+        const p = hash.slice(3);
+        return { lang: 'ru', page: pages.includes(p) ? p : 'home' };
+    }
+    // #lesson-01 (Hebrew default)
+    return { lang: 'he', page: pages.includes(hash) ? hash : 'home' };
+}
+
 function navigateTo(page) {
     currentPage = page;
-    window.location.hash = page === 'home' ? '' : page;
+    window.location.hash = buildHash(page, currentLang);
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.toggle('active', link.dataset.page === page);
@@ -487,12 +507,13 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('overlay').addEventListener('click', closeSidebar);
     window.addEventListener('scroll', () => updateReadingProgress(), { passive: true });
 
-    // Apply saved language
+    // Parse URL hash for language and page
+    const initial = parseHash(window.location.hash.slice(1));
+    if (initial.lang) currentLang = initial.lang;
     switchLang(currentLang);
 
-    const hash = window.location.hash.slice(1);
-    if (hash && pages.includes(hash)) {
-        navigateTo(hash);
+    if (initial.page !== 'home') {
+        navigateTo(initial.page);
     } else {
         setTimeout(() => initScrollAnimations(), 100);
     }
@@ -500,9 +521,14 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProgress();
 
     window.addEventListener('hashchange', () => {
-        const h = window.location.hash.slice(1);
-        if (h && pages.includes(h)) navigateTo(h);
-        else if (!h) navigateTo('home');
+        const parsed = parseHash(window.location.hash.slice(1));
+        // Only switch lang if hash explicitly says different lang
+        if (parsed.lang && parsed.lang !== currentLang) {
+            switchLang(parsed.lang);
+        }
+        if (parsed.page !== currentPage) {
+            navigateTo(parsed.page);
+        }
     });
 });
 
