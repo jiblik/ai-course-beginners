@@ -159,7 +159,7 @@ function switchLang(lang) {
 
     // Mobile lang toggle
     const mf = document.getElementById('mobileLangFlag');
-    if (mf) mf.textContent = lang === 'he' ? '🇷🇺' : '🇮🇱';
+    if (mf) mf.textContent = lang === 'he' ? 'RU' : 'IL';
 
     // Translate all i18n elements
     applyTranslations();
