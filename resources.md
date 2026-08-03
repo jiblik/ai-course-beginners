@@ -10,10 +10,10 @@
 
 | כלי | קישור | חינם? | מחיר פרימיום | הכי טוב ל... |
 |-----|--------|-------|-------------|-------------|
-| **ChatGPT** | [chat.openai.com](https://chat.openai.com) | ✅ מוגבל | $20/חודש | כתיבה יצירתית, כלי רב-תכליתי |
-| **Claude** | [claude.ai](https://claude.ai) | ✅ מוגבל | $20/חודש | ניתוח מסמכים, דיוק, עברית |
-| **Gemini** | [gemini.google.com](https://gemini.google.com) | ✅ נדיב | $22/חודש | מחקר, אינטגרציה עם Google |
-| **Grok** | [grok.com](https://grok.com) | ✅ מוגבל | $8-30/חודש | עדכניות, מגמות רשת |
+| **ChatGPT** | [chat.openai.com](https://chat.openai.com) | ✅ מוגבל | $20/חודש (Plus) | GPT-5.6 Sol, Sora וידאו, כלי רב-תכליתי |
+| **Claude** | [claude.ai](https://claude.ai) | ✅ מוגבל | $20/חודש (Pro) | Opus 5, ניתוח מסמכים, דיוק, קוד |
+| **Gemini** | [gemini.google.com](https://gemini.google.com) | ✅ נדיב | $19.99/חודש (AI Pro) | Gemini 3.1 Pro, Veo וידאו, Google |
+| **Grok** | [grok.com](https://grok.com) | ✅ מוגבל | $10-30/חודש | Grok 4.5, עדכניות מ-X |
 | **Copilot** | [copilot.microsoft.com](https://copilot.microsoft.com) | ✅ בסיסי | $20/חודש | אינטגרציה עם Office |
 | **Perplexity** | [perplexity.ai](https://perplexity.ai) | ✅ נדיב | $20/חודש | מחקר עם מקורות |
 
@@ -23,12 +23,13 @@
 
 | כלי | קישור | חינם? | מחיר | הכי טוב ל... |
 |-----|--------|-------|------|-------------|
-| **DALL-E** (ב-ChatGPT) | [chat.openai.com](https://chat.openai.com) | ✅ מוגבל | כלול ב-Plus | תמונות מטקסט, קל לשימוש |
-| **Midjourney** | [midjourney.com](https://midjourney.com) | ❌ | $10/חודש | אמנות, איכות גבוהה מאוד |
-| **Leonardo.ai** | [leonardo.ai](https://leonardo.ai) | ✅ 150 נקודות/יום | $10/חודש | אילוסטרציות, דמויות |
-| **Canva AI** | [canva.com](https://canva.com) | ✅ מוגבל | $13/חודש | עיצוב גרפי + AI |
-| **Ideogram** | [ideogram.ai](https://ideogram.ai) | ✅ מוגבל | $7/חודש | טקסט בתמונות |
-| **Remove.bg** | [remove.bg](https://remove.bg) | ✅ מוגבל | $5/חודש | הסרת רקע |
+| **GPT-Image** (ב-ChatGPT) | [chat.openai.com](https://chat.openai.com) | ✅ מוגבל | כלול ב-Plus $20 | יצירה כללית, טקסט בתוך תמונה |
+| **Nano Banana / Imagen** (ב-Gemini) | [gemini.google.com](https://gemini.google.com) | ✅ נדיב | כלול ב-AI Pro | יצירה מהירה, אינטגרציה עם טקסט |
+| **Midjourney V7** | [midjourney.com](https://midjourney.com) | ❌ | מ-$10/חודש | איכות אמנותית, סגנון |
+| **Leonardo.ai** | [leonardo.ai](https://leonardo.ai) | ✅ 150 נקודות/יום | מ-$10/חודש | אילוסטרציות, דמויות |
+| **Canva AI** | [canva.com](https://canva.com) | ✅ מוגבל | מ-$13/חודש | עיצוב גרפי + AI |
+| **Ideogram 2** | [ideogram.ai](https://ideogram.ai) | ✅ מוגבל | מ-$7/חודש | טקסט מדויק בתמונות |
+| **Remove.bg** | [remove.bg](https://remove.bg) | ✅ מוגבל | מ-$5/חודש | הסרת רקע |
 
 ---
 
@@ -36,12 +37,16 @@
 
 | כלי | קישור | חינם? | מחיר | מה עושה |
 |-----|--------|-------|------|---------|
-| **Runway** | [runway.ml](https://runway.ml) | ✅ מוגבל | $12/חודש | יצירת וידאו מ-AI |
+| **Sora 2** (ב-ChatGPT) | [chat.openai.com](https://chat.openai.com) | ❌ | כלול ב-Plus $20 | וידאו איכותי עד 60 שניות |
+| **Veo 3.1** (ב-Gemini) | [gemini.google.com](https://gemini.google.com) | ✅ מוגבל | AI Pro $19.99 | וידאו + סאונד מסונכרן |
+| **Runway Gen-4** | [runway.ml](https://runway.ml) | ✅ מוגבל | מ-$12/חודש | וידאו עד 120 שניות, שליטה מדויקת |
+| **Kling 2.5** | [klingai.com](https://klingai.com) | ✅ מוגבל | מ-$10/חודש | סצנות ארוכות עד 180 שניות |
+| **Pika 2** | [pika.art](https://pika.art) | ✅ מוגבל | מ-$8/חודש | מהיר לרשתות חברתיות |
 | **CapCut** | [capcut.com](https://capcut.com) | ✅ | פרימיום זמין | עריכת וידאו + AI |
-| **HeyGen** | [heygen.com](https://heygen.com) | ✅ מוגבל | $24/חודש | Avatar מדבר |
-| **ElevenLabs** | [elevenlabs.io](https://elevenlabs.io) | ✅ מוגבל | $5/חודש | טקסט לדיבור |
-| **Suno** | [suno.com](https://suno.com) | ✅ מוגבל | $8/חודש | יצירת מוזיקה |
-| **Otter.ai** | [otter.ai](https://otter.ai) | ✅ 300 דק'/חודש | $17/חודש | תמלול פגישות |
+| **HeyGen** | [heygen.com](https://heygen.com) | ✅ מוגבל | מ-$24/חודש | Avatar מדבר |
+| **ElevenLabs v3** | [elevenlabs.io](https://elevenlabs.io) | ✅ מוגבל | מ-$5/חודש | טקסט לדיבור (עברית OK) |
+| **Suno v4** | [suno.com](https://suno.com) | ✅ מוגבל | מ-$8/חודש | יצירת מוזיקה |
+| **Otter.ai** | [otter.ai](https://otter.ai) | ✅ 300 דק'/חודש | מ-$17/חודש | תמלול פגישות |
 
 ---
 

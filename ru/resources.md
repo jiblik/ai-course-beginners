@@ -4,16 +4,16 @@
 
 ---
 
-## 🤖 ИИ-чат-боты
+## 🤖 ИИ-чат-боты (август 2026)
 
-| Инструмент | Ссылка | Бесплатно? | Цена Premium | Лучше всего для... |
-|---|---|---|---|---|
-| **ChatGPT** | [chat.openai.com](https://chat.openai.com) | ✅ Ограничено | $20/мес | Творческие тексты, универсальный |
-| **Claude** | [claude.ai](https://claude.ai) | ✅ Ограничено | $20/мес | Анализ документов, точность |
-| **Gemini** | [gemini.google.com](https://gemini.google.com) | ✅ Щедро | $22/мес | Исследования, Google-интеграция |
-| **Grok** | [grok.com](https://grok.com) | ✅ Ограничено | $8-30/мес | Актуальность, тренды |
-| **Copilot** | [copilot.microsoft.com](https://copilot.microsoft.com) | ✅ Базовый | $20/мес | Интеграция с Office |
-| **Perplexity** | [perplexity.ai](https://perplexity.ai) | ✅ Щедро | $20/мес | Исследования с источниками |
+| Инструмент | Ссылка | Бесплатно? | Цена Premium | Текущая модель | Лучше всего для... |
+|---|---|---|---|---|---|
+| **ChatGPT** | [chat.openai.com](https://chat.openai.com) | ✅ Ограничено | $20/мес (Plus) | GPT-5.6 Sol | Творческие тексты, Sora видео, универсальный |
+| **Claude** | [claude.ai](https://claude.ai) | ✅ Ограничено | $20/мес (Pro) | Opus 5, Sonnet 5 | Анализ документов, точность, код |
+| **Gemini** | [gemini.google.com](https://gemini.google.com) | ✅ Щедро | $19.99/мес (AI Pro) | Gemini 3.1 Pro | Исследования, Veo видео, Google-интеграция |
+| **Grok** | [grok.com](https://grok.com) | ✅ Ограничено | $10-30/мес | Grok 4.5 | Актуальность, тренды X |
+| **Copilot** | [copilot.microsoft.com](https://copilot.microsoft.com) | ✅ Базовый | $20/мес | GPT-5.6 | Интеграция с Office |
+| **Perplexity** | [perplexity.ai](https://perplexity.ai) | ✅ Щедро | $20/мес | Собственная + внешние | Исследования с источниками |
 
 ---
 
@@ -21,25 +21,30 @@
 
 | Инструмент | Ссылка | Бесплатно? | Цена | Лучше всего для... |
 |---|---|---|---|---|
-| **DALL-E** (в ChatGPT) | [chat.openai.com](https://chat.openai.com) | ✅ Ограничено | Включено в Plus | Изображения из текста, просто |
-| **Midjourney** | [midjourney.com](https://midjourney.com) | ❌ | $10/мес | Искусство, высокое качество |
-| **Leonardo.ai** | [leonardo.ai](https://leonardo.ai) | ✅ 150 кредитов/день | $10/мес | Иллюстрации, персонажи |
-| **Canva AI** | [canva.com](https://canva.com) | ✅ Ограничено | $13/мес | Графический дизайн + ИИ |
-| **Ideogram** | [ideogram.ai](https://ideogram.ai) | ✅ Ограничено | $7/мес | Текст на изображениях |
-| **Remove.bg** | [remove.bg](https://remove.bg) | ✅ Ограничено | $5/мес | Удаление фона |
+| **GPT-Image** (в ChatGPT) | [chat.openai.com](https://chat.openai.com) | ✅ Ограничено | Включено в Plus $20 | Универсальная генерация, текст в кадре |
+| **Nano Banana / Imagen** (в Gemini) | [gemini.google.com](https://gemini.google.com) | ✅ Щедро | Включено в AI Pro | Быстрая генерация, интеграция с текстом |
+| **Midjourney V7** | [midjourney.com](https://midjourney.com) | ❌ | от $10/мес | Художественное качество, стиль |
+| **Leonardo.ai** | [leonardo.ai](https://leonardo.ai) | ✅ 150 кредитов/день | от $10/мес | Иллюстрации, персонажи |
+| **Canva AI** | [canva.com](https://canva.com) | ✅ Ограничено | от $13/мес | Графический дизайн + ИИ |
+| **Ideogram 2** | [ideogram.ai](https://ideogram.ai) | ✅ Ограничено | от $7/мес | Точный текст на изображениях |
+| **Remove.bg** | [remove.bg](https://remove.bg) | ✅ Ограничено | от $5/мес | Удаление фона |
 
 ---
 
-## 🎬 Видео и аудио
+## 🎬 Видео и аудио (обновлено 2026)
 
 | Инструмент | Ссылка | Бесплатно? | Цена | Что делает |
 |---|---|---|---|---|
-| **Runway** | [runway.ml](https://runway.ml) | ✅ Ограничено | $12/мес | Генерация видео из ИИ |
+| **Sora 2** (в ChatGPT) | [chat.openai.com](https://chat.openai.com) | ❌ | Включено в Plus $20 | Топовая генерация видео до 60 сек |
+| **Veo 3.1** (в Gemini) | [gemini.google.com](https://gemini.google.com) | ✅ Ограничено | AI Pro $19.99 | Видео + синхронный звук |
+| **Runway Gen-4** | [runway.ml](https://runway.ml) | ✅ Ограничено | от $12/мес | Видео до 120 сек, точный контроль |
+| **Kling 2.5** | [klingai.com](https://klingai.com) | ✅ Ограничено | от $10/мес | Длинные сцены до 180 сек |
+| **Pika 2** | [pika.art](https://pika.art) | ✅ Ограничено | от $8/мес | Быстро для соцсетей |
 | **CapCut** | [capcut.com](https://capcut.com) | ✅ | Premium есть | Монтаж видео + ИИ |
-| **HeyGen** | [heygen.com](https://heygen.com) | ✅ Ограничено | $24/мес | Говорящий аватар |
-| **ElevenLabs** | [elevenlabs.io](https://elevenlabs.io) | ✅ Ограничено | $5/мес | Текст в речь |
-| **Suno** | [suno.com](https://suno.com) | ✅ Ограничено | $8/мес | Создание музыки |
-| **Otter.ai** | [otter.ai](https://otter.ai) | ✅ 300 мин/мес | $17/мес | Расшифровка встреч |
+| **HeyGen** | [heygen.com](https://heygen.com) | ✅ Ограничено | от $24/мес | Говорящий аватар |
+| **ElevenLabs v3** | [elevenlabs.io](https://elevenlabs.io) | ✅ Ограничено | от $5/мес | Голос из текста (русский OK) |
+| **Suno v4** | [suno.com](https://suno.com) | ✅ Ограничено | от $8/мес | Создание музыки |
+| **Otter.ai** | [otter.ai](https://otter.ai) | ✅ 300 мин/мес | от $17/мес | Расшифровка встреч |
 
 ---
 
