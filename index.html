@@ -99,6 +99,91 @@
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- ============================================
+         ACCESS GATE (Landing + Password Modal)
+         Shown when user is not authenticated.
+         ============================================ -->
+    <div class="gate" id="accessGate" style="display:none;">
+        <div class="gate-inner">
+            <div class="gate-logo">
+                <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                    <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                    <path d="M16 4v6M16 22v6M4 16h6M22 16h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M7.5 7.5l4.2 4.2M20.3 20.3l4.2 4.2M7.5 24.5l4.2-4.2M20.3 11.7l4.2-4.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+            </div>
+
+            <div class="gate-badge" data-i18n="gate-badge">Курс • Обновлено август 2026</div>
+
+            <h1 class="gate-title">
+                <span data-i18n="gate-title-1">Освойте</span>
+                <span class="gradient-text" data-i18n="gate-title-2">искусственный интеллект</span>
+                <span data-i18n="gate-title-3">за 9 уроков</span>
+            </h1>
+
+            <p class="gate-subtitle" data-i18n="gate-subtitle">
+                Полный практический курс — от «Что такое ChatGPT?» до уверенного использования в работе. Актуально на 2026 год.
+            </p>
+
+            <ul class="gate-features">
+                <li><span class="gate-check">✓</span> <span data-i18n="gate-f1">9 уроков + бонусные материалы</span></li>
+                <li><span class="gate-check">✓</span> <span data-i18n="gate-f2">30+ готовых промптов для копирования</span></li>
+                <li><span class="gate-check">✓</span> <span data-i18n="gate-f3">GPT-5, Claude 5, Gemini 3, Sora 2, Veo 3.1</span></li>
+                <li><span class="gate-check">✓</span> <span data-i18n="gate-f4">Пожизненный доступ + все будущие обновления</span></li>
+                <li><span class="gate-check">✓</span> <span data-i18n="gate-f5">Гарантия возврата 30 дней</span></li>
+            </ul>
+
+            <div class="gate-price">
+                <div class="gate-price-value"><span data-i18n="gate-price">$29</span></div>
+                <div class="gate-price-note" data-i18n="gate-price-note">одноразовая оплата</div>
+            </div>
+
+            <div class="gate-actions">
+                <a href="#" id="gateBuyBtn" class="btn-primary btn-lg" target="_blank" rel="noopener">
+                    <span data-i18n="gate-buy">Купить курс</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l-7 7 7 7"/></svg>
+                </a>
+                <button class="btn-ghost" onclick="showPasswordModal()">
+                    <span data-i18n="gate-have-access">У меня уже есть доступ</span>
+                </button>
+            </div>
+
+            <p class="gate-footer">
+                <span data-i18n="gate-lang">Язык:</span>
+                <a href="#" onclick="switchLang('he');return false;">עברית</a>
+                <span>·</span>
+                <a href="#" onclick="switchLang('ru');return false;">Русский</a>
+            </p>
+        </div>
+
+        <!-- Password Modal -->
+        <div class="gate-modal" id="passwordModal" style="display:none;">
+            <div class="gate-modal-inner">
+                <button class="gate-modal-close" onclick="hidePasswordModal()" aria-label="Close">×</button>
+                <h3 data-i18n="modal-title">Введите пароль доступа</h3>
+                <p class="gate-modal-desc" data-i18n="modal-desc">Пароль пришёл вам на почту после оплаты.</p>
+                <form onsubmit="submitPassword(event)">
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        class="gate-input"
+                        placeholder="AICOURSE-XXXX-XXXX"
+                        autocomplete="off"
+                        autofocus>
+                    <p class="gate-error" id="passwordError" style="display:none;" data-i18n="modal-error">Неверный пароль. Проверьте письмо с покупкой.</p>
+                    <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+                        <span data-i18n="modal-submit">Открыть курс</span>
+                    </button>
+                </form>
+                <p class="gate-modal-help">
+                    <span data-i18n="modal-lost">Потеряли пароль?</span>
+                    <a href="mailto:jiblik@gmail.com?subject=Lost%20password%20-%20AI%20Course">jiblik@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content -->
     <main class="content" id="content">
 

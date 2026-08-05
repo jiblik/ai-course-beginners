@@ -43,6 +43,26 @@ const i18n = {
         'home-name': 'דף הבית',
         'copy': 'העתק', 'copied': '✓ הועתק',
         'loading': 'טוען שיעור...', 'error': 'שגיאה בטעינת השיעור 😕',
+        'gate-badge': 'קורס • מעודכן אוגוסט 2026',
+        'gate-title-1': 'שלטו ב',
+        'gate-title-2': 'בינה מלאכותית',
+        'gate-title-3': 'ב-9 שיעורים',
+        'gate-subtitle': 'קורס מעשי מלא — מ"מה זה ChatGPT?" ועד שימוש בטוח בעבודה. מעודכן ל-2026.',
+        'gate-f1': '9 שיעורים + חומרי בונוס',
+        'gate-f2': '30+ פרומפטים מוכנים להעתקה',
+        'gate-f3': 'GPT-5, Claude 5, Gemini 3, Sora 2, Veo 3.1',
+        'gate-f4': 'גישה לכל החיים + כל העדכונים',
+        'gate-f5': 'החזר כספי מלא תוך 30 יום',
+        'gate-price': '₪149',
+        'gate-price-note': 'תשלום חד-פעמי',
+        'gate-buy': 'קנו את הקורס',
+        'gate-have-access': 'יש לי כבר גישה',
+        'gate-lang': 'שפה:',
+        'modal-title': 'הכניסו סיסמת גישה',
+        'modal-desc': 'הסיסמה נשלחה למייל שלכם אחרי הרכישה.',
+        'modal-error': 'סיסמה שגויה. בדקו את מייל הרכישה.',
+        'modal-submit': 'פתחו את הקורס',
+        'modal-lost': 'איבדתם את הסיסמה?',
         lessonNames: {
             'lesson-01':'מה זה AI?','lesson-02':'השחקנים הגדולים',
             'lesson-03':'Prompting - יסודות','lesson-04':'Prompting - מתקדם',
@@ -95,6 +115,26 @@ const i18n = {
         'home-name': 'Главная',
         'copy': 'Копировать', 'copied': '✓ Скопировано',
         'loading': 'Загрузка урока...', 'error': 'Ошибка загрузки урока 😕',
+        'gate-badge': 'Курс • Обновлено август 2026',
+        'gate-title-1': 'Освойте',
+        'gate-title-2': 'искусственный интеллект',
+        'gate-title-3': 'за 9 уроков',
+        'gate-subtitle': 'Полный практический курс — от «Что такое ChatGPT?» до уверенного использования в работе. Актуально на 2026 год.',
+        'gate-f1': '9 уроков + бонусные материалы',
+        'gate-f2': '30+ готовых промптов для копирования',
+        'gate-f3': 'GPT-5, Claude 5, Gemini 3, Sora 2, Veo 3.1',
+        'gate-f4': 'Пожизненный доступ + все будущие обновления',
+        'gate-f5': 'Гарантия возврата 30 дней',
+        'gate-price': '$29',
+        'gate-price-note': 'одноразовая оплата',
+        'gate-buy': 'Купить курс',
+        'gate-have-access': 'У меня уже есть доступ',
+        'gate-lang': 'Язык:',
+        'modal-title': 'Введите пароль доступа',
+        'modal-desc': 'Пароль пришёл вам на почту после оплаты.',
+        'modal-error': 'Неверный пароль. Проверьте письмо с покупкой.',
+        'modal-submit': 'Открыть курс',
+        'modal-lost': 'Потеряли пароль?',
         lessonNames: {
             'lesson-01':'Что такое ИИ?','lesson-02':'Главные игроки',
             'lesson-03':'Prompting — Основы','lesson-04':'Prompting — Продвинутый',
@@ -175,6 +215,10 @@ function switchLang(lang) {
 
     // Hero title (innerHTML)
     document.getElementById('heroTitle').innerHTML = t('hero-title');
+
+    // Update gate buy button to current-language checkout URL
+    const buyBtn = document.getElementById('gateBuyBtn');
+    if (buyBtn) buyBtn.href = CHECKOUT_URLS[lang] || CHECKOUT_URLS.ru;
 
     // Update URL hash with language
     window.location.hash = buildHash(currentPage, lang);
@@ -491,9 +535,93 @@ function closeSidebar() {
 }
 
 // ============================================
+// ACCESS GATE — Password protection
+// ============================================
+// To change the password:
+// 1. Open browser console on any page
+// 2. Run: sha256Hash("YOUR-NEW-PASSWORD").then(console.log)
+// 3. Replace ACCESS_HASH below with the printed hash
+//
+// Current password: AICOURSE-VIP-2026
+const ACCESS_HASH = 'b6278bd502ad85e73a6f270367593885c03566d9331d52d1d851e9e9d894b148';
+
+// Lemon Squeezy / Gumroad checkout URLs (fill after creating products)
+const CHECKOUT_URLS = {
+    he: 'https://jiblik.lemonsqueezy.com/buy/PLACEHOLDER-HE',
+    ru: 'https://jiblik.lemonsqueezy.com/buy/PLACEHOLDER-RU'
+};
+
+async function sha256Hash(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function hasAccess() {
+    return localStorage.getItem('course-access') === ACCESS_HASH;
+}
+
+function grantAccess() {
+    localStorage.setItem('course-access', ACCESS_HASH);
+    document.getElementById('accessGate').style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+function showGate() {
+    document.getElementById('accessGate').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    // Update buy button URL by current language
+    const btn = document.getElementById('gateBuyBtn');
+    if (btn) btn.href = CHECKOUT_URLS[currentLang] || CHECKOUT_URLS.ru;
+}
+
+function showPasswordModal() {
+    document.getElementById('passwordModal').style.display = 'flex';
+    setTimeout(() => document.getElementById('passwordInput')?.focus(), 100);
+}
+
+function hidePasswordModal() {
+    document.getElementById('passwordModal').style.display = 'none';
+    document.getElementById('passwordError').style.display = 'none';
+    document.getElementById('passwordInput').value = '';
+}
+
+async function submitPassword(e) {
+    e.preventDefault();
+    const input = document.getElementById('passwordInput').value.trim();
+    const err = document.getElementById('passwordError');
+    if (!input) return;
+    const hash = await sha256Hash(input);
+    if (hash === ACCESS_HASH) {
+        err.style.display = 'none';
+        hidePasswordModal();
+        grantAccess();
+    } else {
+        err.style.display = 'block';
+        document.getElementById('passwordInput').select();
+    }
+}
+
+// Support ?key=PASSWORD in URL for one-click access from purchase confirmation email
+async function checkUrlKey() {
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get('key');
+    if (key) {
+        const hash = await sha256Hash(key);
+        if (hash === ACCESS_HASH) {
+            grantAccess();
+            // Clean the URL so the key isn't visible/bookmarkable in shared links
+            const cleanUrl = window.location.pathname + window.location.hash;
+            window.history.replaceState({}, '', cleanUrl);
+            return true;
+        }
+    }
+    return false;
+}
+
+// ============================================
 // Init
 // ============================================
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     initTheme();
     document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 
@@ -511,6 +639,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const initial = parseHash(window.location.hash.slice(1));
     if (initial.lang) currentLang = initial.lang;
     switchLang(currentLang);
+
+    // Access gate: check URL ?key= param first, then localStorage, else show gate
+    const grantedViaUrl = await checkUrlKey();
+    if (!grantedViaUrl && !hasAccess()) {
+        showGate();
+    }
 
     if (initial.page !== 'home') {
         navigateTo(initial.page);
