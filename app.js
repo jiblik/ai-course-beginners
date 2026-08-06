@@ -541,10 +541,11 @@ function closeSidebar() {
 // Current password: AICOURSE-VIP-2026
 const ACCESS_HASH = 'b6278bd502ad85e73a6f270367593885c03566d9331d52d1d851e9e9d894b148';
 
-// Lemon Squeezy / Gumroad checkout URLs (fill after creating products)
+// Creem checkout URLs. TEST mode for now — switch to /payment/ (no /test/)
+// when going live. Product IDs stay the same across test/live modes.
 const CHECKOUT_URLS = {
-    he: 'https://jiblik.lemonsqueezy.com/buy/PLACEHOLDER-HE',
-    ru: 'https://jiblik.lemonsqueezy.com/buy/PLACEHOLDER-RU'
+    he: 'https://www.creem.io/test/payment/PLACEHOLDER-HE',
+    ru: 'https://www.creem.io/test/payment/prod_6uOs26Ci75NwQKb0TJDKP8'
 };
 
 async function sha256Hash(str) {
