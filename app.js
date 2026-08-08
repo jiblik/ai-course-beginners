@@ -541,11 +541,11 @@ function closeSidebar() {
 // Current password: AICOURSE-VIP-2026
 const ACCESS_HASH = 'b6278bd502ad85e73a6f270367593885c03566d9331d52d1d851e9e9d894b148';
 
-// Creem checkout URLs. TEST mode for now — switch to /payment/ (no /test/)
-// when going live. Product IDs stay the same across test/live modes.
+// Creem checkout URLs — LIVE (real payments).
+// Product IDs are per-store (test vs live are separate stores).
 const CHECKOUT_URLS = {
-    he: 'https://www.creem.io/test/payment/PLACEHOLDER-HE',
-    ru: 'https://www.creem.io/test/payment/prod_6uOs26Ci75NwQKb0TJDKP8'
+    he: 'https://www.creem.io/payment/PLACEHOLDER-HE',
+    ru: 'https://www.creem.io/payment/prod_4kmxgKrlw7gM5rezsCdWUv'
 };
 
 async function sha256Hash(str) {
